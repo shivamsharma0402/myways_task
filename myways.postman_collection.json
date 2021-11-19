@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "2de46a15-b76c-4bae-98b1-b1c77a5592ba",
+		"name": "myways",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"shivamva\",\r\n    \"password\": \"13132\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/user/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "create blog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"this is a blog\", \r\n    \"content\": \"blog-content\", \r\n    \"author\": \"Shivam Sharma\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/blogs/create"
+			},
+			"response": []
+		},
+		{
+			"name": "read blog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "update blog",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"this is updated blog\", \r\n    \"content\": \"blog-updated-content\", \r\n    \"author\": \"Shivam\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/blogs/update?blogid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"blogs",
+						"update"
+					],
+					"query": [
+						{
+							"key": "blogid",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete blog",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/blogs/delete?blogid=61964ce31097c2535e04db97",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"blogs",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "blogid",
+							"value": "61964ce31097c2535e04db97"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
