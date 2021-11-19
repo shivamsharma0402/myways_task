@@ -52,6 +52,6 @@ exports.logincontroller = async (req,res,next) => {
     if(!error.statusCode){
       error.statusCode = 500;
     }
-    throw error;
+    next(error);
   }
 };
