@@ -12,29 +12,47 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"shivamva\",\r\n    \"password\": \"13132\"\r\n}",
+					"raw": "{\r\n    \"username\": \"rohti\",\r\n    \"password\": \"13131222\",\r\n    \"isAdmin\": \"Yes\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "http://localhost:5000/user/signup"
+				"url": "https://myways-task.herokuapp.com/user/signup"
 			},
 			"response": []
 		},
 		{
 			"name": "login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": null
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"rohti\",\r\n    \"password\": \"13131222\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://myways-task.herokuapp.com/user/login"
 			},
 			"response": []
 		},
 		{
 			"name": "create blog",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvaHRpIiwiaXNBZG1pbiI6IlllcyIsImlhdCI6MTYzNzMzMDkxMywiZXhwIjoxNjM3MzM0NTEzfQ.evxvNDJ_yUVdEyH3kShStpLHux44A1nhKT1RFpV3EyE"
+					}
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -46,7 +64,7 @@
 						}
 					}
 				},
-				"url": "http://localhost:5000/blogs/create"
+				"url": "https://myways-task.herokuapp.com/blogs/create"
 			},
 			"response": []
 		},
@@ -55,18 +73,24 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": null
+				"url": "https://myways-task.herokuapp.com/blogs/read"
 			},
 			"response": []
 		},
 		{
 			"name": "update blog",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvaHRpIiwiaXNBZG1pbiI6IlllcyIsImlhdCI6MTYzNzMzMDkxMywiZXhwIjoxNjM3MzM0NTEzfQ.evxvNDJ_yUVdEyH3kShStpLHux44A1nhKT1RFpV3EyE"
+					}
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"this is updated blog\", \r\n    \"content\": \"blog-updated-content\", \r\n    \"author\": \"Shivam\"\r\n}",
+					"raw": "{\r\n    \"updatedTitle\": \"this is updated blog\", \r\n    \"updatedContent\": \"blog-upd-content\", \r\n    \"updatedAuthor\": \"Shiv\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -74,12 +98,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/blogs/update?blogid",
-					"protocol": "http",
+					"raw": "https://myways-task.herokuapp.com/blogs/update?blogid=",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"myways-task",
+						"herokuapp",
+						"com"
 					],
-					"port": "5000",
 					"path": [
 						"blogs",
 						"update"
@@ -87,7 +112,7 @@
 					"query": [
 						{
 							"key": "blogid",
-							"value": null
+							"value": ""
 						}
 					]
 				}
@@ -97,15 +122,22 @@
 		{
 			"name": "delete blog",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvaHRpIiwiaXNBZG1pbiI6IlllcyIsImlhdCI6MTYzNzI5MzQ4NSwiZXhwIjoxNjM3Mjk3MDg1fQ.qobM0nAwTiJKHPh8J2A-bfvh5Dco2jsA2-tDXJyVzno"
+					}
+				},
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/blogs/delete?blogid=61964ce31097c2535e04db97",
-					"protocol": "http",
+					"raw": "https://myways-task.herokuapp.com/blogs/delete?blogid=6197b07e925ebc6735441d72",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"myways-task",
+						"herokuapp",
+						"com"
 					],
-					"port": "5000",
 					"path": [
 						"blogs",
 						"delete"
@@ -113,7 +145,7 @@
 					"query": [
 						{
 							"key": "blogid",
-							"value": "61964ce31097c2535e04db97"
+							"value": "6197b07e925ebc6735441d72"
 						}
 					]
 				}
